@@ -34,7 +34,7 @@ namespace ATMManagementSystem
                 {
                     connection.Open();
 
-                    string query = "SELECT AccountNumber, Pin, Balance FROM \"BankAccounts\" WHERE \"AccountNumber\" = @AccountNumber";
+                    string query = "SELECT accountnumber, pin, balance FROM bankaccounts WHERE accountnumber = @AccountNumber";
 
                     using (var command = new NpgsqlCommand(query, connection))
                     {
@@ -81,7 +81,7 @@ namespace ATMManagementSystem
                 {
                     connection.Open();
 
-                    string query = "UPDATE \"BankAccounts\" SET \"Balance\" = @Balance WHERE \"AccountNumber\" = @AccountNumber";
+                    string query = "UPDATE bankaccounts SET balance = @Balance WHERE accountnumber = @AccountNumber";
 
                     using (var command = new NpgsqlCommand(query, connection))
                     {
